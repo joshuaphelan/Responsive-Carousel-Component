@@ -1,0 +1,99 @@
+
+/* =======================
+   Slider CSS Start
+======================= */
+
+.card-slider {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 100%;
+    padding: 0 50px; /* Space for arrows */
+    box-sizing: border-box;
+}
+
+.slider {
+    display: flex;
+    gap: 20px;
+    transition: transform 0.3s ease-in-out;
+    align-items: center;
+    position: relative;
+    height: auto;
+}
+
+.slider a {
+    flex: 0 0 33.333%; /* Consistent sizing for all cards */
+    transition: transform 0.3s ease, opacity 0.3s ease, box-shadow 0.3s ease;
+    opacity: 0.6; /* Dimmer side cards */
+    transform: scale(0.9); /* Slightly smaller side cards */
+    margin: 0;
+    box-shadow: none; /* No shadow for side cards */
+}
+
+.slider a.middle {
+    transform: scale(1); /* Normal size for middle card */
+    opacity: 1; /* Full opacity for middle card */
+    margin: -5px 0; /* Slightly reduce margins for emphasis */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3); /* Add drop shadow for emphasis */
+}
+
+.slider a img {
+    width: 100%; /* Ensure the image fills the container */
+    height: auto; /* Maintain aspect ratio */
+    object-fit: contain; /* Prevent cropping */
+    display: block; /* Remove inline spacing */
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+    .slider {
+        gap: 0;
+    }
+    .slider a {
+        flex: 0 0 100%; /* Only one card visible at a time */
+        opacity: 0.6;
+        transform: scale(0.95); /* Slightly smaller side cards */
+    }
+    .slider a.middle {
+        transform: scale(1); /* Normal size for middle card */
+        opacity: 1;
+        margin: -5px 0;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    }
+}
+
+/* Navigation Arrows */
+.slider-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 30px;
+    height: 80px;
+    background-color: rgba(0, 0, 0, 0.3);
+    border: none;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    z-index: 10;
+    opacity: 0.7;
+    transition: opacity 0.3s ease;
+}
+
+.slider-arrow:hover {
+    opacity: 1;
+}
+
+.slider-arrow-left {
+    left: 10px;
+}
+
+.slider-arrow-right {
+    right: 10px;
+}
+
+/* =======================
+   Slider CSS End
+======================= */
